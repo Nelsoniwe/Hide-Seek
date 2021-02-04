@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Joystick
+  - Hunter
+  - Seeker
+  - coin
+  - JoystickPanel
+  - Catched
+  - HunterPlayer
+  - SeekerPlayer
+  - FOV
+  - Timer
+  - Hider
+  - HiderPlayer
+  - VisibleHider
+  - CatchedPlayer
+  - VisibleHiderPlayer
+  - Body
+  - Skin
+  - teleport
+  - background
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Obstacles
+  - Targets
+  - Hunter
+  - coins
+  - Fluid
+  - Floor
+  - nonVisible
+  - cubesForColideDoors
+  - door
+  - coinCounter
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: button
+    uniqueID: 1495024315
+    locked: 0
+  - name: joystick
+    uniqueID: 280491085
+    locked: 0
