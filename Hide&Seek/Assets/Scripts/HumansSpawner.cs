@@ -18,7 +18,7 @@ public class HumansSpawner : MonoBehaviour
 
         for (int i = 0; i < players.Count; i++)
         {
-            GameObject stepCopy = Instantiate(Skins[Random.Range(0, Skins.Count)], new Vector3(players[i].transform.position.x, players[i].transform.position.y-0.7f, players[i].transform.position.z),players[i].transform.rotation) as GameObject;
+            GameObject stepCopy = Instantiate(Skins[Random.Range(0, Skins.Count)], new Vector3(players[i].transform.position.x, players[i].transform.position.y - 0.7f, players[i].transform.position.z), players[i].transform.rotation) as GameObject;
             stepCopy.transform.parent = players[i].transform;
         }
     }

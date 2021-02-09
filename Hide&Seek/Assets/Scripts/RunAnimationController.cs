@@ -16,7 +16,7 @@ public class RunAnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(animator == null)
+        if (animator == null)
             animator = this.transform.GetComponentInChildren<Animator>();
 
         if (vector.x != this.transform.position.x || vector.z != this.transform.position.z)

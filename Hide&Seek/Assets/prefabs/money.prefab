@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 7189443138058356640, guid: 8636d1892cf34cc418740f4817e04c52,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7189443138058356645, guid: 8636d1892cf34cc418740f4817e04c52,
         type: 3}
@@ -200,6 +200,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7189443138058356646, guid: 8636d1892cf34cc418740f4817e04c52,
+        type: 3}
+      propertyPath: useRigidbodyForVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189443138058356646, guid: 8636d1892cf34cc418740f4817e04c52,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189443138058356647, guid: 8636d1892cf34cc418740f4817e04c52,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189443138058356647, guid: 8636d1892cf34cc418740f4817e04c52,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8636d1892cf34cc418740f4817e04c52, type: 3}
 --- !u!4 &5746929667322205251 stripped
