@@ -6,6 +6,9 @@ public class RotateCameraOnChoose : MonoBehaviour
 {
     public GameObject Center;
 
+    [SerializeField]
+    float speed;
+
     private Vector3 aroundWhat;
     // Start is called before the first frame update
     void Start()
@@ -16,8 +19,8 @@ public class RotateCameraOnChoose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!StaticField.gameStarted)
-        transform.RotateAround(aroundWhat,Vector3.up,0.1f);
+        if(StaticField.ChoosedPlay == ChoosePlay.none)
+        transform.RotateAround(aroundWhat,Vector3.up, speed);
         else
         {
             this.enabled = false;

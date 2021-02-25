@@ -37,21 +37,24 @@ public class MobileController : MonoBehaviour, IPointerUpHandler
 
     public IEnumerator OnDrag(PointerEventData ped)
     {
-        if (drag)
+        if (!(StaticField.gameLosed || StaticField.gameWinned))
         {
-            Vector2 pos;
-            if (joystickBG != null && RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickBG.rectTransform, ped.position, ped.pressEventCamera, out pos))
+            if (drag)
             {
-                pos.x = (pos.x / joystickBG.rectTransform.sizeDelta.x);
-                pos.y = (pos.y / joystickBG.rectTransform.sizeDelta.x);
+                Vector2 pos;
+                if (joystickBG != null && RectTransformUtility.ScreenPointToLocalPointInRectangle(joystickBG.rectTransform, ped.position, ped.pressEventCamera, out pos))
+                {
+                    pos.x = (pos.x / joystickBG.rectTransform.sizeDelta.x);
+                    pos.y = (pos.y / joystickBG.rectTransform.sizeDelta.x);
 
-                inputVector = new Vector2(pos.x * 2 - 1, pos.y * 2 - 1);
-                inputVector = (inputVector.magnitude > 1.0f) ? inputVector.normalized : inputVector;
+                    inputVector = new Vector2(pos.x * 2 - 1, pos.y * 2 - 1);
+                    inputVector = (inputVector.magnitude > 1.0f) ? inputVector.normalized : inputVector;
 
-                joystick.rectTransform.anchoredPosition = new Vector2(inputVector.x * (joystickBG.rectTransform.sizeDelta.x / 2), inputVector.y * (joystickBG.rectTransform.sizeDelta.y / 2));
-                yield return new WaitForSeconds(0.01f);
-                //if (!joystickBG.IsActive())
-                dragCoroutine = StartCoroutine(OnDrag(ped));
+                    joystick.rectTransform.anchoredPosition = new Vector2(inputVector.x * (joystickBG.rectTransform.sizeDelta.x / 2), inputVector.y * (joystickBG.rectTransform.sizeDelta.y / 2));
+                    yield return new WaitForSeconds(0.01f);
+                    //if (!joystickBG.IsActive())
+                    dragCoroutine = StartCoroutine(OnDrag(ped));
+                }
             }
         }
     }

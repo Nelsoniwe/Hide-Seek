@@ -58,6 +58,28 @@ public class InvisibleController : MonoBehaviour
     }
 }
 
+public static class ChildObjManager
+{
+    public static Transform GetChildObject(Transform parent, string _tag)
+    {
+        for (int i = 0; i < parent.childCount; i++)
+        {
+            Transform child = parent.GetChild(i);
+            if (child.tag == (_tag))
+            {
+                return child;
+            }
+            else if (child.childCount > 0)
+            {
+               GetChildObject(child, _tag);
+            }
+        }
+        return null;
+    }
+}
+
+
+
 public static class StaticField
 {
     public static void ResetStaticFields()
@@ -67,7 +89,7 @@ public static class StaticField
         gameStarted = false;
         gameWinned = false;
         gameLosed = false;
-        ChoosedPlay = new ChoosePlay();
+        ChoosedPlay = ChoosePlay.none;
     }
 
     public static bool isPlayerCathced = false;
@@ -75,12 +97,13 @@ public static class StaticField
     public static bool gameStarted = false;
     public static bool gameWinned = false;
     public static bool gameLosed = false;
-    public static ChoosePlay ChoosedPlay = new ChoosePlay();
+    public static ChoosePlay ChoosedPlay = ChoosePlay.none;
+    public static string SkinSelected;
 }
 
 
 
 public enum ChoosePlay
 {
-    hide,seek
+    hide,seek,none
 }

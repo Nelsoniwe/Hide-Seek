@@ -11,15 +11,17 @@ public class JoystickController : MonoBehaviour, IPointerDownHandler, IPointerUp
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        mobileController.drag = true;
-       // if (pointer == null)
-       // {
-          //  pointer = eventData;
-        //}
-        // Objecta.SetActive(true);
-        Objecta.transform.GetComponent<RectTransform>().anchoredPosition = eventData.pointerCurrentRaycast.screenPosition - new Vector2(Objecta.transform.GetComponent<RectTransform>().rect.width / 2, Objecta.transform.GetComponent<RectTransform>().rect.height / 2);
-        //print(eventData.pointerCurrentRaycast.screenPosition.x + " " + eventData.pointerCurrentRaycast.screenPosition.y);
-        StartCoroutine(mobileController.OnDrag(eventData));
+        
+            mobileController.drag = true;
+            // if (pointer == null)
+            // {
+            //  pointer = eventData;
+            //}
+            // Objecta.SetActive(true);
+            Objecta.transform.GetComponent<RectTransform>().anchoredPosition = eventData.pointerCurrentRaycast.screenPosition - new Vector2(Objecta.transform.GetComponent<RectTransform>().rect.width , Objecta.transform.GetComponent<RectTransform>().rect.height );
+            //print(eventData.pointerCurrentRaycast.screenPosition.x + " " + eventData.pointerCurrentRaycast.screenPosition.y);
+            StartCoroutine(mobileController.OnDrag(eventData));
+        
     }
     public void OnPointerUp(PointerEventData eventData)
     {

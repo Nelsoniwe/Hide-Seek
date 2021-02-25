@@ -9,9 +9,14 @@ public class CoinsCountVisualisationUI : MonoBehaviour
 {
    // Text text;
     public TextMeshProUGUI text;
-    void Start()
+ //   void Start()
+ //   {
+        //text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+    //    StartCoroutine(CoinCounterCoroutine());
+   // }
+
+    private void OnEnable()
     {
-        text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         StartCoroutine(CoinCounterCoroutine());
     }
 
@@ -20,6 +25,6 @@ public class CoinsCountVisualisationUI : MonoBehaviour
       //  Debug.Log("Started Coroutine at timestamp : " + Time.time);
         text.text = Convert.ToString(PlayerPrefs.GetInt("Coins"));
         yield return new WaitForSeconds(0.2f);
-        StartCoroutine(CoinCounterCoroutine());
+        yield return StartCoroutine(CoinCounterCoroutine());
     }
 }

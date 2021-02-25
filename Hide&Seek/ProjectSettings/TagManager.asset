@@ -23,6 +23,7 @@ TagManager:
   - Skin
   - teleport
   - background
+  - BuyButton
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - door
   - coinCounter
   - Background
-  - 
+  - ShopGUI
   - 
   - 
   - 

@@ -11,6 +11,7 @@ public class GameTimerScript : MonoBehaviour
     public TextMeshProUGUI text;
     private float time = 60;
 
+
     private int catchedCaunter=0;
     // Update is called once per frame
     private List<GameObject> hiders;
@@ -31,6 +32,7 @@ public class GameTimerScript : MonoBehaviour
         if (StaticField.gameStarted&&!StaticField.gameLosed&&!StaticField.gameWinned)
         {
             text.text = Convert.ToString(Convert.ToInt32(time));
+            if(StaticField.gameStarted)
             time -= Time.deltaTime;
             if (time <= 0)
             {
@@ -38,7 +40,9 @@ public class GameTimerScript : MonoBehaviour
 
                 if (StaticField.ChoosedPlay == ChoosePlay.seek)
                     StaticField.gameLosed = true;
-                else
+                if (StaticField.isPlayerCathced==true)
+                    StaticField.gameLosed = true;
+                else if(!StaticField.isPlayerCathced && StaticField.ChoosedPlay == ChoosePlay.hide)
                     StaticField.gameWinned = true;
             }
         }
